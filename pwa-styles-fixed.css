@@ -1,0 +1,66 @@
+/* إلغاء الهوامش والحشو من جميع العناصر */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* جعل الجسم يغطي كامل الصفحة */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* جعل التبويبات ملتصقة بأسفل الصفحة */
+.tab-container {
+  display: flex;
+  background-color: #e5e6eb;
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: flex-start;
+  z-index: 1; /* وضع التبويبات فوق المحتوى */
+}
+
+.tab {
+  padding: 2px 6px 2px 6px;
+  margin-right: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.tab:hover {
+  background-color: #bbb;
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+  height: 100%; /* ملء المساحة المتبقية */
+  padding-bottom: 5px; /* التأكد من أن التبويبات لا تتداخل مع المحتوى */
+}
+
+.active-tab {
+  background-color: #4CAF50;
+  color: white;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* التأكد من أن محتوى التبويبات يظهر فوق كل شيء آخر */
+.tab-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 40px; /* ترك مساحة لتبويبات الأسفل */
+}

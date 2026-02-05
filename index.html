@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <link rel="icon" href="https://images.quickbase.com/si/16/006-favorite.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🟢Tareq🟢</title>
+  
+  <!-- تعديل مسار ملف التنسيق -->
+  <link rel="stylesheet" href="./styles.css">
+  
+  <!-- إضافة وصف للتطبيق -->
+  <meta name="description" content="تطبيق طارق للبحث عن عمل ومتابعة المهام">
+  
+  <!-- تعديل مسار ملف manifest -->
+  <link rel="manifest" href="./manifest.json">
+  
+  <!-- إضافة متطلبات PWA الإضافية -->
+  <meta name="theme-color" content="#4CAF50">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="طارق">
+  
+  <!-- تعديل مسارات الأيقونات -->
+  <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="./icons/icon-167x167.png">
+  
+  <style>
+    /* إلغاء الهوامش والحشو من جميع العناصر */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* جعل الجسم يغطي كامل الصفحة */
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* جعل التبويبات ملتصقة بأسفل الصفحة */
+    .tab-container {
+      display: flex;
+      background-color: #e5e6eb;
+      padding: 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      justify-content: flex-start;
+      z-index: 1; /* وضع التبويبات فوق المحتوى */
+    }
+
+    .tab {
+      padding: 2px 6px 2px 6px;
+      margin-right: 6px;
+      cursor: pointer;
+      border-radius: 4px;
+      background-color: #ccc;
+      transition: background-color 0.3s;
+    }
+
+    .tab:hover {
+      background-color: #bbb;
+    }
+
+    .tab-content {
+      display: none;
+      width: 100%;
+      height: 100%; /* ملء المساحة المتبقية */
+      padding-bottom: 5px; /* التأكد من أن التبويبات لا تتداخل مع المحتوى */
+    }
+
+    .active-tab {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* التأكد من أن محتوى التبويبات يظهر فوق كل شيء آخر */
+    .tab-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 40px; /* ترك مساحة لتبويبات الأسفل */
+    }
+  </style>
+</head>
+<body>
+
+<div class="tab-container">
+  <div class="tab" onclick="openTab('google')">&nbsp;الـــــبــــحــــث عـــــن عــــمــــل 💼&nbsp;</div>
+  <div class="tab" onclick="openTab('999')">&nbsp;مـــــقــــابــــلات الــــــعـــــمـــــل 🤝&nbsp;</div>
+  <div class="tab" onclick="openTab('youtube')">&nbsp;مـــكـــاتـــب الـــتـــوظـــيـــف والـــشـــركـــات 🏤&nbsp</div>
+  <div class="tab" onclick="openTab('facebook')">&nbsp;الـــــســــيـــــرة الــــــذاتــــــيـــــة 📄&nbsp;</div>
+  <div class="tab" onclick="openTab('444')"> &nbsp;مــــــواقــــع 🌐&nbsp;</div>
+  <div class="tab" onclick="openTab('777')"> &nbsp;الــــــمـــــهـــــام-Tasks 🎯&nbsp;</div>
+  <div class="tab" onclick="openTab('555')">&nbsp;بــحــث / مــقــارنــات 🔍&nbsp;</div>
+  <div class="tab" onclick="openTab('888')">&nbsp;أخـــــــرى 📊&nbsp;</div>
+  <div class="tab" onclick="openTab('666')">&nbsp;كـــشـــكـــول 📔&nbsp;</div>
+  <div class="tab" onclick="openTab('333')"> &nbsp;ايــــــمـــــيـــلات 📧&nbsp;</div>
+</div>
+
+<div id="google" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1booc3e8rlHIK78cR1IWesX3ttYQ6EbLL/edit"></iframe>
+</div>
+
+<div id="555" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1O-JdNMpKuOhjxyGaPOLUg8rAOuMD4OCS/edit"></iframe>
+</div>
+
+<div id="999" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1u0mvzvUjCJnbZ_MIOWiRiIgIY3BTKJU0/edit"></iframe>
+</div>
+
+<div id="youtube" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1KUjihqhsXmoSYsytM7ACbIsWBrqffBPc/edit"></iframe>
+</div>
+
+<div id="facebook" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/19i5JOZGcV91JFymo-KkxL63SNbdKPwST/edit"></iframe>
+</div>
+
+<div id="444" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1qUmmpJvzsHev-VP7J2Wke7utfjfFxC7X/edit"></iframe>
+</div>
+
+<div id="666" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1AZqy-_54TTETZs_1oUs9HiXniZBh8nYUmtnVwB85TE0/edit?tab=t.0"></iframe>
+</div>
+
+<div id="777" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1kxZ8WbbE8cqt1e60_RWwinVXQoyFa10MbHNiultmdXE/edit?tab=t.0"></iframe>
+</div>
+
+<div id="888" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1DZJo6KB_pm4X8x1LtTvpbFgHgMCO-KlbMcpR7L8-xIM/edit?tab=t.0"></iframe>
+</div>
+
+<div id="333" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1caccukbk7fWUfLTbi4ZZUoFgYyYcchU0Ih2X2kyD05A/edit?tab=t.0"></iframe>
+</div>
+
+<script>
+  // دالة لفتح محتوى التبويب المناسب
+  function openTab(tabName) {
+    // إخفاء جميع محتويات التبويبات
+    var contents = document.querySelectorAll('.tab-content');
+    contents.forEach(function(content) {
+      content.style.display = 'none';
+    });
+
+    // إزالة الفئة النشطة من جميع التبويبات
+    var tabs = document.querySelectorAll('.tab');
+    tabs.forEach(function(tab) {
+      tab.classList.remove('active-tab');
+    });
+
+    // عرض محتوى التبويب المحدد
+    document.getElementById(tabName).style.display = 'block';
+    
+    // إضافة الفئة النشطة للتبويب المحدد
+    var activeTab = document.querySelector(`[onclick="openTab('${tabName}')"]`);
+    activeTab.classList.add('active-tab');
+    
+    // تخزين التبويب النشط في localStorage
+    localStorage.setItem('activeTab', tabName);
+  }
+
+  // التحقق من وجود تبويب نشط محفوظ
+  document.addEventListener('DOMContentLoaded', function() {
+    var savedTab = localStorage.getItem('activeTab');
+    if (savedTab) {
+      openTab(savedTab);
+    } else {
+      // افتراضيًا، نفتح التبويب الأول (جوجل)
+      openTab('google');
+    }
+  });
+
+  // تحقق من إمكانية تثبيت التطبيق وإظهار إشعار للمستخدم
+  let deferredPrompt;
+  
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // منع ظهور مطالبة التثبيت التلقائية
+    e.preventDefault();
+    // حفظ حدث المطالبة لاستخدامه لاحقًا
+    deferredPrompt = e;
+    
+    // عرض زر بسيط للمستخدم لتثبيت التطبيق
+    setTimeout(() => {
+      const installDiv = document.createElement('div');
+      installDiv.style.position = 'fixed';
+      installDiv.style.top = '10px';
+      installDiv.style.left = '10px';
+      installDiv.style.padding = '10px';
+      installDiv.style.background = '#4CAF50';
+      installDiv.style.color = 'white';
+      installDiv.style.borderRadius = '5px';
+      installDiv.style.zIndex = '1000';
+      installDiv.style.cursor = 'pointer';
+      installDiv.textContent = 'تثبيت التطبيق';
+      
+      installDiv.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          // إظهار مطالبة التثبيت
+          deferredPrompt.prompt();
+          // انتظار اختيار المستخدم
+          const choiceResult = await deferredPrompt.userChoice;
+          
+          if (choiceResult.outcome === 'accepted') {
+            console.log('تم تثبيت التطبيق');
+          }
+          // لا يمكن استخدام deferredPrompt مرة أخرى
+          deferredPrompt = null;
+          
+          // إزالة الزر
+          document.body.removeChild(installDiv);
+        }
+      });
+      
+      document.body.appendChild(installDiv);
+    }, 3000);
+  });
+
+  // تسجيل service worker للـ PWA
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(function(error) {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+    });
+  }
+</script>
+
+</body>
+</html>
